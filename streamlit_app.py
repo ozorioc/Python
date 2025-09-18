@@ -145,60 +145,60 @@ def main() -> None:
     # Linha 1: C, ←, ÷ (largura dupla)
     c1, c2, c3, c4 = st.columns(4)
     with c1:
-        st.button("C", use_container_width=True, on_click=clear)
+        st.button("C", key="btn_C", use_container_width=True, on_click=clear)
     with c2:
-        st.button("←", use_container_width=True, on_click=backspace)
+        st.button("←", key="btn_back", use_container_width=True, on_click=backspace)
     with c3:
-        st.button("÷", use_container_width=True, on_click=input_operation, args=("/",))
+        st.button("÷", key="btn_div", use_container_width=True, on_click=input_operation, args=("/",))
     with c4:
         st.write("")
 
     # 7 8 9 *
     c1, c2, c3, c4 = st.columns(4)
     with c1:
-        st.button("7", use_container_width=True, on_click=input_number, args=("7",))
+        st.button("7", key="btn_7", use_container_width=True, on_click=input_number, args=("7",))
     with c2:
-        st.button("8", use_container_width=True, on_click=input_number, args=("8",))
+        st.button("8", key="btn_8", use_container_width=True, on_click=input_number, args=("8",))
     with c3:
-        st.button("9", use_container_width=True, on_click=input_number, args=("9",))
+        st.button("9", key="btn_9", use_container_width=True, on_click=input_number, args=("9",))
     with c4:
-        st.button("×", use_container_width=True, on_click=input_operation, args=("*",))
+        st.button("×", key="btn_mul", use_container_width=True, on_click=input_operation, args=("*",))
 
     # 4 5 6 -
     c1, c2, c3, c4 = st.columns(4)
     with c1:
-        st.button("4", use_container_width=True, on_click=input_number, args=("4",))
+        st.button("4", key="btn_4", use_container_width=True, on_click=input_number, args=("4",))
     with c2:
-        st.button("5", use_container_width=True, on_click=input_number, args=("5",))
+        st.button("5", key="btn_5", use_container_width=True, on_click=input_number, args=("5",))
     with c3:
-        st.button("6", use_container_width=True, on_click=input_number, args=("6",))
+        st.button("6", key="btn_6", use_container_width=True, on_click=input_number, args=("6",))
     with c4:
-        st.button("-", use_container_width=True, on_click=input_operation, args=("-",))
+        st.button("-", key="btn_sub", use_container_width=True, on_click=input_operation, args=("-",))
 
     # 1 2 3 +
     c1, c2, c3, c4 = st.columns(4)
     with c1:
-        st.button("1", use_container_width=True, on_click=input_number, args=("1",))
+        st.button("1", key="btn_1", use_container_width=True, on_click=input_number, args=("1",))
     with c2:
-        st.button("2", use_container_width=True, on_click=input_number, args=("2",))
+        st.button("2", key="btn_2", use_container_width=True, on_click=input_number, args=("2",))
     with c3:
-        st.button("3", use_container_width=True, on_click=input_number, args=("3",))
+        st.button("3", key="btn_3", use_container_width=True, on_click=input_number, args=("3",))
     with c4:
-        st.button("+", use_container_width=True, on_click=input_operation, args=("+",))
+        st.button("+", key="btn_add", use_container_width=True, on_click=input_operation, args=("+",))
 
     # 0 (duplo), ., =
     c1, c2, c3, c4 = st.columns(4)
     with c1:
-        st.button("0", use_container_width=True, on_click=input_number, args=("0",))
+        st.button("0", key="btn_0", use_container_width=True, on_click=input_number, args=("0",))
     with c2:
-        st.button("0", use_container_width=True, on_click=input_number, args=("0",))
+        st.write("")
     with c3:
         if "." not in str(st.session_state.display):
-            st.button(",", use_container_width=True, on_click=input_number, args=(".",))
+            st.button(",", key="btn_dot", use_container_width=True, on_click=input_number, args=(".",))
         else:
             st.write("")
     with c4:
-        st.button("=", use_container_width=True, on_click=perform_calculation)
+        st.button("=", key="btn_eq", use_container_width=True, on_click=perform_calculation)
 
     st.markdown("</div>", unsafe_allow_html=True)
 
